@@ -1,3 +1,7 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "plugins": ["@stylistic/ts", "@stylistic/jsx"],
+  "rules": {
+    // "@stylistic/ts/indent": ["error", 2]
+  }
 }
