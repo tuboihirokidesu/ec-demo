@@ -10,21 +10,11 @@ import { Product } from '@prisma/client';
 import AddToCartButton from './AddToCartButton';
 import { addToCartAction } from '@/app/_actions/addToCartAction';
 
-interface AlbumArtworkProps extends React.HTMLAttributes<HTMLDivElement> {
+type Props = {
   product: Product;
-  aspectRatio?: 'portrait' | 'square';
-  width?: number;
-  height?: number;
-}
+};
 
-export function ProductCard({
-  product,
-  aspectRatio = 'portrait',
-  width,
-  height,
-  className,
-  ...props
-}: AlbumArtworkProps) {
+export function ProductCard({ product }: Props) {
   return (
     <Card>
       <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
