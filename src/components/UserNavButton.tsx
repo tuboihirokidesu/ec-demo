@@ -22,7 +22,7 @@ export default function UserNavButton({ session }: Props) {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         {user && user.image ? (
-          <Avatar>
+          <Avatar className='h-8 w-8'>
             <AvatarImage src={user.image} alt={user?.name ?? ''} />
             <AvatarFallback>{user.name?.slice(0, 2)}</AvatarFallback>
           </Avatar>

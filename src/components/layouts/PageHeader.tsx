@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import ShoppingCartButton from '../ShoppingCartButton';
 import { getCart } from '@/lib/db/cart';
+import UserNavButton from '../UserNavButton';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 
 export default async function PageHeader() {
+  const session = await getServerSession(authOptions);
   const cart = await getCart();
 
   return (
@@ -14,6 +18,7 @@ export default async function PageHeader() {
         </Link>
         <div className='flex gap-4 items-center'>
           <ShoppingCartButton cart={cart} />
+          <UserNavButton session={session} />
         </div>
       </div>
     </header>
